@@ -4,7 +4,14 @@ rvm:
 install:
   - sudo apt-get update -q
   #- sudo apt-get upgrade -y
-  - sudo apt-get install lxc 
+  # workaround to get lxc installed, thanks https://github.com/dergachev/travis-test/blob/master/script.sh#L14-20
+  - |
+  cat <<EOF | sudo tee /usr/sbin/policy-rc.d
+  #!/bin/sh
+  exit 101
+  EOF
+  - sudo chmod 755 /usr/sbin/policy-rc.d
+  - sudo apt-get install lxc
   - sudo apt-get install redir htop btrfs-tools vim apparmor-utils linux-image-generic linux-headers-generic
   - sudo aa-complain /usr/bin/lxc-start
   - sudo wget -nv http://files.vagrantup.com/packages/95d308caaecd139b8f62e41e7add0ec3f8ae3bd1/vagrant_1.2.3_x86_64.deb
