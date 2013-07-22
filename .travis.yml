@@ -21,8 +21,8 @@ install:
   - sudo dpkg -i vagrant_1.2.3_x86_64.deb
   - sudo vagrant plugin install vagrant-lxc
 script:
-  - vagrant up
-  - vagrant status
-  - vagrant ssh -C 'ls -la'
+  - sudo vagrant up
+  - sudo vagrant status
+  - sudo vagrant ssh -C 'ls -la'
 after-script:
-  - vagrant destroy
+  - sudo vagrant destroy
