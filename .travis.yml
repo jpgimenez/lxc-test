@@ -7,7 +7,7 @@ env:
     - VAGRANT_LOG=debug
 install:
   - sudo apt-get update -q
-  - sudo apt-get upgrade -y
+  #- sudo apt-get upgrade -y
   # workaround to get lxc installed, thanks https://github.com/dergachev/travis-test/blob/master/script.sh#L14-20
   - |
     cat <<EOF | sudo tee /usr/sbin/policy-rc.d
@@ -16,7 +16,7 @@ install:
     EOF
   - sudo chmod 755 /usr/sbin/policy-rc.d
   - sudo uname -r
-  - sudo apt-get install linux-headers-$(uname -r)
+  - sudo apt-get install linux-headers-virtual
   - sudo apt-get install lxc redir htop btrfs-tools vim apparmor-utils linux-image-generic linux-headers-generic
   - sudo aa-complain /usr/bin/lxc-start
   - sudo lxc-checkconfig
