@@ -17,7 +17,7 @@ install:
   - sudo chmod 755 /usr/sbin/policy-rc.d
   - sudo uname -r
   - sudo apt-get install linux-headers-virtual
-  - sudo apt-get install lxc redir htop btrfs-tools vim apparmor-utils linux-image-generic linux-headers-generic
+  - sudo apt-get install lxc redir htop btrfs-tools vim apparmor-utils # linux-image-generic linux-headers-generic
   - sudo aa-complain /usr/bin/lxc-start
   - sudo lxc-checkconfig
   - sudo wget -nv http://files.vagrantup.com/packages/95d308caaecd139b8f62e41e7add0ec3f8ae3bd1/vagrant_1.2.3_x86_64.deb
