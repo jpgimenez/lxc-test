@@ -16,6 +16,7 @@ install:
     EOF
   - sudo chmod 755 /usr/sbin/policy-rc.d
   - sudo uname -r
+  - sudo apt-get install linux-headers-$(uname -r)
   - sudo apt-get install lxc redir htop btrfs-tools vim apparmor-utils linux-image-generic linux-headers-generic
   - sudo aa-complain /usr/bin/lxc-start
   - sudo lxc-checkconfig
