@@ -21,7 +21,7 @@ install:
   - sudo wget -nv http://files.vagrantup.com/packages/95d308caaecd139b8f62e41e7add0ec3f8ae3bd1/vagrant_1.2.3_x86_64.deb
   - sudo dpkg -i vagrant_1.2.3_x86_64.deb
 script:
-  - lxc-checkconfig
+  - sudo lxc-checkconfig
   - vagrant plugin install vagrant-lxc
   - vagrant up
   - vagrant status
