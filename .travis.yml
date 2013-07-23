@@ -24,6 +24,6 @@ script:
   - vagrant plugin install vagrant-lxc
   - vagrant up
   - vagrant status
-  - vagrant ssh -C 'ls -la'
+  - vagrant ssh -c 'ls -la; whoami'
 after-script:
   - vagrant destroy
