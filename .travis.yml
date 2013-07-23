@@ -19,10 +19,10 @@ install:
   - sudo aa-complain /usr/bin/lxc-start
   - sudo wget -nv http://files.vagrantup.com/packages/95d308caaecd139b8f62e41e7add0ec3f8ae3bd1/vagrant_1.2.3_x86_64.deb
   - sudo dpkg -i vagrant_1.2.3_x86_64.deb
-  - sudo vagrant plugin install vagrant-lxc
 script:
-  - sudo vagrant up
-  - sudo vagrant status
-  - sudo vagrant ssh -C 'ls -la'
+  - vagrant plugin install vagrant-lxc
+  - vagrant up
+  - vagrant status
+  - vagrant ssh -C 'ls -la'
 after-script:
-  - sudo vagrant destroy
+  - vagrant destroy
